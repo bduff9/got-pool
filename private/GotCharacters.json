@@ -1,0 +1,158 @@
+{
+	"characters": [{
+			"name": "Jon Snow",
+			"picture": "jonsnow.jpg"
+		},
+		{
+			"name": "Samwell Tarly",
+			"picture": "sam.jpg"
+		},
+		{
+			"name": "Gilly",
+			"picture": "gilly.jpg"
+		},
+		{
+			"name": "Tormund Giantsbane",
+			"picture": "tormund.jpg"
+		},
+		{
+			"name": "Davos Seaworth",
+			"picture": "davos.jpg"
+		},
+		{
+			"name": "Melisandre",
+			"picture": "melisandre.jpg"
+		},
+		{
+			"name": "The Night King",
+			"picture": "nightking.jpg"
+		},
+		{
+			"name": "Beric Dondarrion",
+			"picture": "beric.jpg"
+		},
+		{
+			"name": "Thoros of Myr",
+			"picture": "thoros.jpg"
+		},
+		{
+			"name": "Lyanna Mormont",
+			"picture": "lyanna.jpg"
+		},
+
+		{
+			"name": "Daenerys Targaryen",
+			"picture": "daenerys.jpg"
+		},
+		{
+			"name": "Grey Worm",
+			"picture": "greyworm.jpg"
+		},
+		{
+			"name": "Missandei",
+			"picture": "missandei.jpg"
+		},
+		{
+			"name": "Daario Naharis",
+			"picture": "daario.jpg"
+		},
+		{
+			"name": "Lord Varys",
+			"picture": "varys.jpg"
+		},
+		{
+			"name": "Jorah Mormont",
+			"picture": "jorah.jpg"
+		},
+		{
+			"name": "Tyrion Lanister",
+			"picture": "tyrion.jpg"
+		},
+		{
+			"name": "Drogon",
+			"picture": "drogon.jpg"
+		},
+
+		{
+			"name": "Sansa Stark",
+			"picture": "sansa.jpg"
+		},
+		{
+			"name": "Brienne of Tarth",
+			"picture": "brienne.jpg"
+		},
+		{
+			"name": "Podrick Payne",
+			"picture": "pod.jpg"
+		},
+		{
+			"name": "Littlefinger",
+			"picture": "littlefinger.jpg"
+		},
+		{
+			"name": "Bran Stark",
+			"picture": "bran.jpg"
+		},
+		{
+			"name": "Meera Reed",
+			"picture": "meera.jpg"
+		},
+		{
+			"name": "Arya Stark",
+			"picture": "arya.jpg"
+		},
+
+		{
+			"name": "Theon Greyjoy",
+			"picture": "theon.jpg"
+		},
+		{
+			"name": "Euron Greyjoy",
+			"picture": "euron.jpg"
+		},
+		{
+			"name": "Yara Greyjoy",
+			"picture": "yara.jpg"
+		},
+
+
+		{
+			"name": "Cersei Lanister",
+			"picture": "cersei.jpg"
+		},
+		{
+			"name": "The Mountain",
+			"picture": "mountain.jpg"
+		},
+		{
+			"name": "Qyburn",
+			"picture": "qyburn.jpg"
+		},
+		{
+			"name": "Jaime Lanister",
+			"picture": "jaime.jpg"
+		},
+		{
+			"name": "Bronn of the Blackwater",
+			"picture": "bronn.jpg"
+		},
+		{
+			"name": "Edmure Tully",
+			"picture": "edmure.jpg"
+		},
+
+
+		{
+			"name": "The Hound",
+			"picture": "hound.jpg"
+		},
+		{
+			"name": "Olenna Tyrell",
+			"picture": "olena.jpg"
+		},
+		{
+			"name": "Ellaria Sand",
+			"picture": "ellaria.jpg"
+		}
+	]
+}
