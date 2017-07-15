@@ -3,18 +3,15 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
-import GoTLog from '../collections/gotlogs';
+import { displayError } from '../globals.js';
+import { writeLog } from '../collections/gotlogs';
 
 const NotFound = ({ location }) => {
 
-	const gotLog = new GoTLog();
-	gotLog.user_id = Meteor.userId();
-	gotLog.action = '404';
-	gotLog.message = location.pathname;
-	gotLog.save();
+	writeLog.call({ userId: Meteor.userId(), action: '404', message: location.pathname }, displayError);
 
 	return (
 		<div className="col-xs not-found-wrapper">

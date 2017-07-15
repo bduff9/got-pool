@@ -1,0 +1,16 @@
+Resources:
+
+Meteor:
+	https://www.meteor.com/tutorials/react/collections
+	https://github.com/ultimatejs/tracker-react
+
+React router:
+	https://themeteorchef.com/tutorials/getting-started-with-react-router-v4
+	https://reacttraining.com/react-router/web/api/Redirect/to-string
+
+Styling:
+	https://jenil.github.io/bulmaswatch/slate/
+	https://bloomer.js.org/#/documentation/
+
+~Remove routes.jsx and authedlayout.jsx if no longer needed
+~Do we need ultimatejs:tracker or is komposer good enough?

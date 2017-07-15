@@ -12,3 +12,5 @@ const MakePicks = () => {
 };
 
 MakePicks.propTypes = {};
+
+export default MakePicks;

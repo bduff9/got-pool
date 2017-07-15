@@ -17,3 +17,5 @@ const AuthedLayout = ({ children }) => {
 AuthedLayout.propTypes = {
 	children: PropTypes.array
 };
+
+export default AuthedLayout;

@@ -12,3 +12,5 @@ const AdminUsers = () => {
 };
 
 AdminUsers.propTypes = {};
+
+export default AdminUsers;

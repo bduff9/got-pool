@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';import Helmet from 'react-helmet';
 
-export const Loading = ({ isLoading }) => {
+const Loading = ({ children, isLoading }) => {
 	return (
 		<div className="col">
 			{isLoading ? (
@@ -17,12 +17,15 @@ export const Loading = ({ isLoading }) => {
 				</div>
 			)
 				:
-				this.props.children
+				children
 			}
 		</div>
 	);
 };
 
 Loading.propTypes = {
+	children: PropTypes.object.isRequired,
 	isLoading: PropTypes.bool.isRequired
 };
+
+export default Loading;

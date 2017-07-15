@@ -12,3 +12,5 @@ const Logout = () => {
 };
 
 Logout.propTypes = {};
+
+export default Logout;

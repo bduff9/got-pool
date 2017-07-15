@@ -6,23 +6,11 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Class, Enum } from 'meteor/jagi:astronomy';
 
-export const Action = Enum.create({
-	name: 'Action',
-	identifiers: {
-		'404': 1,
-		'CHAT': 2,
-		'CHAT_HIDDEN': 3,
-		'CHAT_OPENED': 4,
-		'LOGIN': 5,
-		'LOGOUT': 6,
-		'MESSAGE': 7,
-		'PAID': 7,
-		'REGISTER': 8,
-		'SUBMIT_PICKS': 9,
-		'SURVIVOR_PICK': 10
-	}
-});
+import { ACTIONS } from '../constants';
 
+/**
+ * Schema
+ */
 const GoTLogs = new Mongo.Collection('gotlogs');
 const GoTLog = Class.create({
 	name: 'GotLog',
@@ -30,7 +18,8 @@ const GoTLog = Class.create({
 	secured: true,
 	fields: {
 		action: {
-			type: Action
+			type: String,
+			validators: [{ type: 'choice', param: ACTIONS }]
 		},
 		when: Date,
 		message: {
@@ -47,3 +36,28 @@ const GoTLog = Class.create({
 });
 
 export default GoTLog;
+
+/**
+ * Methods
+ */
+export const writeLog = new ValidatedMethod({
+	name: 'GoTLog.insert',
+	validate: new SimpleSchema({
+		action: { type: String, label: 'Action', allowedValues: ACTIONS },
+		message: { type: String, label: 'Message' },
+		userId: { type: String, optional: true, label: 'User ID' }
+	}).validator(),
+	run ({ action, message, userId }) {
+		if (action !== '404' && !userId) throw new Meteor.Error('GoTLog.insert.not-signed-in', 'You must be logged in to write to the log');
+		if (Meteor.isServer) {
+			let logEntry = new GoTLog({
+				action,
+				when: new Date(),
+				message,
+				user_id: userId
+			});
+			logEntry.save();
+		}
+	}
+});
+export const writeLogSync = Meteor.wrapAsync(writeLog.call, writeLog);

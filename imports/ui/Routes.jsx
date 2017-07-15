@@ -4,7 +4,8 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import GoTLog from '../collections/gotlogs';
+import { displayError } from '../globals.js';
+import { writeLog } from '../collections/gotlogs';
 import AdminLogs from './AdminLogs';
 import AdminUsers from './AdminUsers';
 import AuthedLayout from './AuthedLayout';
@@ -67,15 +68,10 @@ function verifyAdmin (nextState, replace) {
 }
 
 function logOut (nextState, replace) {
-	const { location } = nextState,
-			user = Meteor.user();
+	const { location } = nextState;
 	if (Meteor.userId()) {
 		Meteor.logout((err) => {
-			const gotLog = new GoTLog();
-			gotLog.user_id = user._id;
-			gotLog.action = 'LOGOUT';
-			gotLog.message = `${user.first_name} ${user.last_name} successfully signed out`;
-			gotLog.save();
+			writeLog.call({ userId: Meteor.userId(), action: 'LOGOUT', message: location.pathname }, displayError);
 		});
 	} else if (!location.state || !location.state.isLogout) {
 		replace({

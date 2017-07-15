@@ -12,3 +12,5 @@ const AdminLogs = () => {
 };
 
 AdminLogs.propTypes = {};
+
+export default AdminLogs;
