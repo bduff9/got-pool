@@ -1,0 +1,8 @@
+/* CSS declarations go here */
+
+@font-face {
+  font-family: 'Game of Thrones';
+  src: url('GameofThrones.eot'); /* IE9 Compat Modes */
+  src: url('GameofThrones.woff') format('woff'), /* Pretty Modern Browsers */
+       url('GameofThrones.ttf')  format('truetype') /* Safari, Android, iOS */
+}
