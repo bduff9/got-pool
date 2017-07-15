@@ -1,9 +1,9 @@
 'use strict';
 
-import Character from '../imports/collections/characters';
+import Character, { loadCharactersSync } from '../imports/collections/characters';
 
 if (Character.find().count() === 0) {
 	console.log('Begin populating characters...');
-	//TODO: load json file into db
+	loadCharactersSync({});
 	console.log('Populating characters completed!');
 }

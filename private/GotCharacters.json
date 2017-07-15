@@ -1,158 +1,158 @@
 {
 	"characters": [{
 			"name": "Jon Snow",
-			"picture": "jonsnow.jpg"
+			"image": "jonsnow.jpg"
 		},
 		{
 			"name": "Samwell Tarly",
-			"picture": "sam.jpg"
+			"image": "sam.jpg"
 		},
 		{
 			"name": "Gilly",
-			"picture": "gilly.jpg"
+			"image": "gilly.jpg"
 		},
 		{
 			"name": "Tormund Giantsbane",
-			"picture": "tormund.jpg"
+			"image": "tormund.jpg"
 		},
 		{
 			"name": "Davos Seaworth",
-			"picture": "davos.jpg"
+			"image": "davos.jpg"
 		},
 		{
 			"name": "Melisandre",
-			"picture": "melisandre.jpg"
+			"image": "melisandre.jpg"
 		},
 		{
 			"name": "The Night King",
-			"picture": "nightking.jpg"
+			"image": "nightking.jpg"
 		},
 		{
 			"name": "Beric Dondarrion",
-			"picture": "beric.jpg"
+			"image": "beric.jpg"
 		},
 		{
 			"name": "Thoros of Myr",
-			"picture": "thoros.jpg"
+			"image": "thoros.jpg"
 		},
 		{
 			"name": "Lyanna Mormont",
-			"picture": "lyanna.jpg"
+			"image": "lyanna.jpg"
 		},
 
 		{
 			"name": "Daenerys Targaryen",
-			"picture": "daenerys.jpg"
+			"image": "daenerys.jpg"
 		},
 		{
 			"name": "Grey Worm",
-			"picture": "greyworm.jpg"
+			"image": "greyworm.jpg"
 		},
 		{
 			"name": "Missandei",
-			"picture": "missandei.jpg"
+			"image": "missandei.jpg"
 		},
 		{
 			"name": "Daario Naharis",
-			"picture": "daario.jpg"
+			"image": "daario.jpg"
 		},
 		{
 			"name": "Lord Varys",
-			"picture": "varys.jpg"
+			"image": "varys.jpg"
 		},
 		{
 			"name": "Jorah Mormont",
-			"picture": "jorah.jpg"
+			"image": "jorah.jpg"
 		},
 		{
 			"name": "Tyrion Lanister",
-			"picture": "tyrion.jpg"
+			"image": "tyrion.jpg"
 		},
 		{
 			"name": "Drogon",
-			"picture": "drogon.jpg"
+			"image": "drogon.jpg"
 		},
 
 		{
 			"name": "Sansa Stark",
-			"picture": "sansa.jpg"
+			"image": "sansa.jpg"
 		},
 		{
 			"name": "Brienne of Tarth",
-			"picture": "brienne.jpg"
+			"image": "brienne.jpg"
 		},
 		{
 			"name": "Podrick Payne",
-			"picture": "pod.jpg"
+			"image": "pod.jpg"
 		},
 		{
 			"name": "Littlefinger",
-			"picture": "littlefinger.jpg"
+			"image": "littlefinger.jpg"
 		},
 		{
 			"name": "Bran Stark",
-			"picture": "bran.jpg"
+			"image": "bran.jpg"
 		},
 		{
 			"name": "Meera Reed",
-			"picture": "meera.jpg"
+			"image": "meera.jpg"
 		},
 		{
 			"name": "Arya Stark",
-			"picture": "arya.jpg"
+			"image": "arya.jpg"
 		},
 
 		{
 			"name": "Theon Greyjoy",
-			"picture": "theon.jpg"
+			"image": "theon.jpg"
 		},
 		{
 			"name": "Euron Greyjoy",
-			"picture": "euron.jpg"
+			"image": "euron.jpg"
 		},
 		{
 			"name": "Yara Greyjoy",
-			"picture": "yara.jpg"
+			"image": "yara.jpg"
 		},
 
 
 		{
 			"name": "Cersei Lanister",
-			"picture": "cersei.jpg"
+			"image": "cersei.jpg"
 		},
 		{
 			"name": "The Mountain",
-			"picture": "mountain.jpg"
+			"image": "mountain.jpg"
 		},
 		{
 			"name": "Qyburn",
-			"picture": "qyburn.jpg"
+			"image": "qyburn.jpg"
 		},
 		{
 			"name": "Jaime Lanister",
-			"picture": "jaime.jpg"
+			"image": "jaime.jpg"
 		},
 		{
 			"name": "Bronn of the Blackwater",
-			"picture": "bronn.jpg"
+			"image": "bronn.jpg"
 		},
 		{
 			"name": "Edmure Tully",
-			"picture": "edmure.jpg"
+			"image": "edmure.jpg"
 		},
 
 
 		{
 			"name": "The Hound",
-			"picture": "hound.jpg"
+			"image": "hound.jpg"
 		},
 		{
 			"name": "Olenna Tyrell",
-			"picture": "olena.jpg"
+			"image": "olena.jpg"
 		},
 		{
 			"name": "Ellaria Sand",
-			"picture": "ellaria.jpg"
+			"image": "ellaria.jpg"
 		}
 	]
 }

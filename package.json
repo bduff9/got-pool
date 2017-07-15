@@ -1,6 +1,7 @@
 {
   "name": "got-pool",
   "version": "0.0.1",
+  "description": "GoT Pool",
   "repository": {
     "type": "git",
     "url": "https://github.com/bduff9/got-pool.git"
@@ -17,7 +18,7 @@
   "dependencies": {
     "babel-runtime": "^6.20.0",
     "bcrypt": "^1.0.2",
-    "bloomer": "^0.6.1",
+    "bloomer": "^0.6.2",
     "bulma": "^0.4.3",
     "bulmaswatch": "^0.4.2",
     "meteor-node-stubs": "~0.2.4",

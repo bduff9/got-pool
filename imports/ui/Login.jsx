@@ -4,10 +4,11 @@ import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
+import { Button } from 'bloomer';
 
 const Login = () => {
 	return (
-		<div>Login</div>
+		<div><Button>Login</Button></div>
 	);
 };
 
