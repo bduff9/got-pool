@@ -2,3 +2,10 @@
 @import "../node_modules/bulmaswatch/slate/variables";
 @import "../node_modules/bulma/bulma";
 @import "../node_modules/bulmaswatch/slate/overrides";
+
+@font-face {
+  font-family: 'Game of Thrones';
+  src: url('GameofThrones.eot'); /* IE9 Compat Modes */
+  src: url('GameofThrones.woff') format('woff'), /* Pretty Modern Browsers */
+       url('GameofThrones.ttf')  format('truetype') /* Safari, Android, iOS */
+}
