@@ -10,3 +10,9 @@ export const displayError = (err, opts = { title: err && err.reason, type: 'dang
 	}
 	Bert.alert(opts);
 };
+
+export const getFormControlOutlineColor = ({ hasError, isTouched }) => {
+	if (!isTouched) return '';
+	if (hasError) return 'danger';
+	return 'success';
+};

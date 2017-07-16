@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { Class, Enum } from 'meteor/jagi:astronomy';
+import { Class } from 'meteor/jagi:astronomy';
 
 import { ACTIONS } from '../constants';
 
