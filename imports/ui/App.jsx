@@ -4,13 +4,13 @@ import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { composeWithTracker } from 'react-komposer';
 import { Section } from 'bloomer';
 
 import AdminLogs from './AdminLogs';
 import AdminOnly from './AdminOnly';
-import AdminUsers from './AdminUsers';
+import AdminPool from './AdminPool';
 import AppNavigation from './AppNavigation';
 import Authenticated from './Authenticated';
 import Home from './Home';
@@ -37,7 +37,7 @@ const App = appProps => (
 					<Logout exact path="/logout" {...appProps} />
 					<Authenticated exact path="/" component={Home} {...appProps} />
 					<Authenticated exact path="/picks/make" component={MakePicks} {...appProps} />
-					<AdminOnly exact path="/admin/users" component={AdminUsers} {...appProps} />
+					<AdminOnly exact path="/admin/pool" component={AdminPool} {...appProps} />
 					<AdminOnly exact path="/admin/logs" component={AdminLogs} {...appProps} />
 					<Route component={NotFound} {...appProps} />
 				</Switch>

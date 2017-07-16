@@ -15,3 +15,15 @@ Meteor.publish('allUsers', function () {
 	if (allUsers) return allUsers;
 	return this.ready();
 });
+
+Meteor.publish('myUser', function () {
+	let myUser;
+	if (!this.userId) return this.ready();
+	myUser = User.find({ _id: this.userId }, {
+		fields: {
+			services: 0
+		}
+	});
+	if (myUser) return myUser;
+	return this.ready();
+});

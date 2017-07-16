@@ -14,3 +14,11 @@
   color: red;
   font-weight: bold;
 }
+
+.dead {
+  text-decoration: line-through;
+
+  img {
+    //TODO: can we put a big red x through their picture?
+  }
+}

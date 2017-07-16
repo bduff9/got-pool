@@ -5,17 +5,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
-const AuthedLayout = ({ children }) => {
+const AdminPool = () => {
 	return (
-		<div>
-			Authed Layout
-			{children}
-		</div>
+		<div>Update Pool</div>
 	);
 };
 
-AuthedLayout.propTypes = {
-	children: PropTypes.array
-};
+AdminPool.propTypes = {};
 
-export default AuthedLayout;
+export default AdminPool;
