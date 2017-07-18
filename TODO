@@ -12,5 +12,7 @@ Styling:
 	https://jenil.github.io/bulmaswatch/slate/
 	https://bloomer.js.org/#/documentation/
 
-~Remove routes.jsx and authedlayout.jsx if no longer needed
-~Do we need ultimatejs:tracker or is komposer good enough?
+~Create 2 admin screens
+~Mobile Styling
+~Rules and tiebreakers
+~Styling details (i.e. red x on dead characters)
