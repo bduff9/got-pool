@@ -47,7 +47,8 @@ export default class AppNavigation extends TrackerReact(Component) {
 					<Nav>
 						<NavLeft>
 							<NavItem isBrand>
-								<span style={{ fontFamily: 'got' }}>&nbsp; # Death Pool</span>
+								<span className="brand" style={{ fontFamily: 'got' }}>&nbsp; #</span>
+								<span className="title" style={{ fontFamily: 'got' }}>Death Pool</span>
 							</NavItem>
 						</NavLeft>
 						{authenticated ? (
