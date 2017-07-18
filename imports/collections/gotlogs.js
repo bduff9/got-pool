@@ -7,6 +7,7 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Class } from 'meteor/jagi:astronomy';
 
 import { ACTIONS } from '../constants';
+import User from './users';
 
 /**
  * Schema
@@ -31,7 +32,13 @@ const GoTLog = Class.create({
 			optional: true
 		}
 	},
-	helpers: {},
+	helpers: {
+		getUser () {
+			const user = User.findOne(this.user_id);
+			if (!user) return {};
+			return user;
+		}
+	},
 	indexes: {}
 });
 

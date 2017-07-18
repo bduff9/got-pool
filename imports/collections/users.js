@@ -28,6 +28,10 @@ const User = Class.create({
 			type: Number,
 			optional: true
 		},
+		has_submitted: {
+			type: Boolean,
+			default: false
+		},
 		is_admin: {
 			type: Boolean,
 			default: false

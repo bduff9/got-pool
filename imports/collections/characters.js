@@ -33,7 +33,7 @@ export default Character;
  * Methods
  */
 export const loadCharacters = new ValidatedMethod({
-	name: 'Team.insert',
+	name: 'Characters.loadCharacters',
 	validate: new SimpleSchema({}).validator(),
 	run () {
 		if (Meteor.isServer) {
@@ -48,3 +48,17 @@ export const loadCharacters = new ValidatedMethod({
 	}
 });
 export const loadCharactersSync = Meteor.wrapAsync(loadCharacters.call, loadCharacters);
+
+export const toggleCharacterAlive = new ValidatedMethod({
+	name: 'Characters.toggleCharacterAlive',
+	validate: new SimpleSchema({
+		character_id: { type: String, label: 'Character ID' }
+	}).validator(),
+	run ({ character_id }) {
+		const character = Character.findOne(character_id);
+		if (!this.userId) throw new Meteor.Error('signed-out-error', 'You are not signed in');
+		character.isAlive = !character.isAlive;
+		character.save();
+	}
+});
+export const toggleCharacterAliveSync = Meteor.wrapAsync(toggleCharacterAlive.call, toggleCharacterAlive);

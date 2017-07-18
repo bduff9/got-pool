@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { Container } from 'bloomer';
 
 import LoginForm from './LoginForm';
@@ -26,6 +27,7 @@ export default class Login extends Component {
 		const { isLogin } = this.state;
 		return (
 			<Container>
+				{isLogin ? <Helmet title="Login" /> : <Helmet title="Register" />}
 				{isLogin ? <LoginForm goRegister={this._toggleLogin} /> : <RegistrationForm goLogin={this._toggleLogin} />}
 			</Container>
 		);

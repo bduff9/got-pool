@@ -3,6 +3,7 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Icon, Notification } from 'bloomer';
 
@@ -19,6 +20,7 @@ const Logout = ({ authenticated }) => {
 
 	return (
 		<div>
+			<Helmet title="Goodbye" />
 			{authenticated ? (
 				<div>
 					<Icon isSize="medium" isAlign="left">

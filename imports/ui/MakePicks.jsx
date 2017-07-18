@@ -2,6 +2,7 @@
 
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Column, Columns } from 'bloomer';
 
@@ -75,6 +76,7 @@ export default class MakePicks extends TrackerReact(Component) {
 				pageReady = characters.ready() && picks.ready();
 		return (
 			<Loading isLoading={!pageReady}>
+				<Helmet title="Make Picks" />
 				<Columns isCentered isMultiline>
 					{this.characters().map(character => (
 						<Column isSize={{ default: '1/4', tablet: '1/2', mobile: 'full' }} key={`character${character._id}`}>
