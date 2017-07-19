@@ -1,5 +1,6 @@
 'use strict';
 
+import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Accounts } from 'meteor/accounts-base';
@@ -9,6 +10,7 @@ import Yup, { addMethod, string, ref } from 'yup';
 import { Button, Control, Field, Help, Input, Label } from 'bloomer';
 
 import { displayError, getFormControlOutlineColor } from '../globals';
+import { writeLog } from '../collections/gotlogs';
 
 const SimpleForm = ({
 	values,
@@ -171,6 +173,7 @@ export default Formik({
 					message: 'Thanks for registering',
 					type: 'success'
 				});
+				writeLog.call({ userId: Meteor.userId(), action: 'REGISTER' }, displayError);
 			}
 		});
 	},

@@ -51,11 +51,10 @@ export const writeLog = new ValidatedMethod({
 	name: 'GoTLog.insert',
 	validate: new SimpleSchema({
 		action: { type: String, label: 'Action', allowedValues: ACTIONS },
-		message: { type: String, label: 'Message' },
-		userId: { type: String, optional: true, label: 'User ID' }
+		message: { type: String, label: 'Message', optional: true },
+		userId: { type: String, label: 'User ID', optional: true }
 	}).validator(),
 	run ({ action, message, userId }) {
-		if (action !== '404' && !userId) throw new Meteor.Error('GoTLog.insert.not-signed-in', 'You must be logged in to write to the log');
 		if (Meteor.isServer) {
 			let logEntry = new GoTLog({
 				action,

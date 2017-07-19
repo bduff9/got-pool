@@ -24,7 +24,7 @@ const Loading = ({ children, isLoading }) => {
 };
 
 Loading.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+	children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 	isLoading: PropTypes.bool.isRequired
 };
 

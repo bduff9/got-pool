@@ -9,6 +9,7 @@ import Yup from 'yup';
 import { Button, Control, Field, FieldBody, FieldLabel, Help, Icon, Input, Label } from 'bloomer';
 
 import { displayError, getFormControlOutlineColor } from '../globals';
+import { writeLog } from '../collections/gotlogs';
 
 const SimpleForm = ({
 	values,
@@ -110,12 +111,14 @@ export default Formik({
 				} else {
 					displayError(err, { title: err.reason, type: 'warning' });
 				}
+				writeLog.call({ userId: '', action: 'LOGIN', message: `${email} failed to sign in` }, displayError);
 			} else {
 				Bert.alert({
 					message: 'Welcome back!',
 					type: 'success',
 					icon: 'fa-thumbs-up'
 				});
+				writeLog.call({ userId: Meteor.userId(), action: 'LOGIN' }, displayError);
 			}
 		});
 	},

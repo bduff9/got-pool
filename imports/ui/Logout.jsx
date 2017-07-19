@@ -12,9 +12,10 @@ import { writeLog } from '../collections/gotlogs';
 
 const Logout = ({ authenticated }) => {
 	const userId = Meteor.userId();
+
 	if (authenticated) {
 		Meteor.logout((err) => {
-			writeLog.call({ userId: userId, action: 'LOGOUT', message: location.pathname }, displayError);
+			writeLog.call({ userId: userId, action: 'LOGOUT' }, displayError);
 		});
 	}
 

@@ -40,7 +40,7 @@ export default class AppNavigation extends TrackerReact(Component) {
 	render () {
 		const { authenticated } = this.props,
 				{ isRulesOpen } = this.state,
-				currentUser = this.users()[0];
+				currentUser = this.users()[0] || {};
 		return (
 			<Hero isColor="primary" isSize="small">
 				<HeroHeader>

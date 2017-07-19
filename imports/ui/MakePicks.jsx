@@ -2,6 +2,7 @@
 
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Bert } from 'meteor/themeteorchef:bert';
@@ -13,6 +14,7 @@ import Loading from './Loading';
 import CharacterCard from './CharacterCard';
 import CharacterModal from './CharacterModal';
 import Character from '../collections/characters';
+import { writeLog } from '../collections/gotlogs';
 import Pick from '../collections/picks';
 import { submitPicks } from '../collections/users';
 
@@ -86,6 +88,7 @@ export default class MakePicks extends TrackerReact(Component) {
 					type: 'success',
 					icon: 'fa-thumbs-up'
 				});
+				writeLog.call({ userId: Meteor.userId(), action: 'SUBMIT_PICKS' }, displayError);
 				this.context.router.history.push('/');
 			}
 		});
@@ -117,7 +120,7 @@ export default class MakePicks extends TrackerReact(Component) {
 MakePicks.propTypes = {};
 
 MakePicks.contextTypes = {
-	router: React.PropTypes.shape({
-		history: React.PropTypes.object.isRequired
+	router: PropTypes.shape({
+		history: PropTypes.object.isRequired
 	})
 };

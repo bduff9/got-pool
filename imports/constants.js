@@ -12,3 +12,8 @@ export const ACTIONS = [
 	'REGISTER',
 	'SUBMIT_PICKS'
 ];
+
+/**
+ * The number of logs to display on load
+ */
+export const LOGS_PER_PAGE = 20;
