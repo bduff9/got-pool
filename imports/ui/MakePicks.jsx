@@ -120,43 +120,43 @@ export default class MakePicks extends TrackerReact(Component) {
 						<Title isSize={4} hasTextColor="danger"><strong>Picks locked when episode 2 begins!</strong></Title>
 					</Content>
 				</Box>
-				<Field isHorizontal isGrouped>
-					<FieldLabel isNormal>
-						<Label>Search </Label>
-					</FieldLabel>
-					<FieldBody>
+				<Columns isCentered>
+					<Column isSize={{ desktop: '1/2', mobile: 'full' }}>
+						<Field isPulled="left">
+							<Label>Search </Label>
+						</Field>
 						<Field>
 							<Control isExpanded>
 								<input
 									className="input"
 									type="text"
-									placeholder="Enter Character Name"
+									placeholder="Search Character Name"
 									onChange={this._filterCharacter}
 									value={filterCharacterStr}
 								/>
 							</Control>
 						</Field>
-					</FieldBody>
-					<FieldLabel isNormal>
-						<Label>Tiebreaker </Label>
-					</FieldLabel>
-					<FieldBody>
+					</Column>
+					<Column isSize={{ desktop: '1/2', mobile: 'full' }}>
+						<Field isPulled="left">
+							<Label>Tiebreaker </Label>
+						</Field>
 						<Field>
 							<Control isExpanded>
 								<input
 									className="input"
 									type="number"
-									placeholder="Total Characters To Die"
+									placeholder="Total Characters To Die This Season"
 									ref={input => { this.tiebreakerInput = input; }}
 								/>
 							</Control>
 						</Field>
-						<Field >
-							<Control>
-								<Button isFullWidth isColor="primary" type="button" onClick={this._submitPicks}>Submit Picks</Button>
-							</Control>
-						</Field>
-					</FieldBody>
+					</Column>
+				</Columns>
+				<Field >
+					<Control>
+						<Button isFullWidth isColor="primary" type="button" onClick={this._submitPicks}>Submit Picks</Button>
+					</Control>
 				</Field>
 				<Columns isCentered isMultiline>
 					{this.characters().filter(character => !filterCharacterStr || character.name.toUpperCase().indexOf(filterCharacterStr.toUpperCase()) > -1).map(character => (
