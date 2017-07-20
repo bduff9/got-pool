@@ -27,16 +27,27 @@
 
   margin-left: 1em;
 }
-
-.nav-item {
-  font-family: 'got';
-  padding: 0em 2em;
-  letter-spacing: .17em;
+.hero-head {
+  .nav-left {
+    font-family: 'got';
+    overflow: hidden;
+  }
 }
 
-.brand {
-  font-size: 2.5em;
-  margin-right: .5em;
+.nav-right, .nav-center, {
+  .nav-item {
+    font-family: 'got';
+    font-size: x-small;
+    padding: 1.5em;
+    letter-spacing: .12em;
+  }
+}
+
+.hero-foot {
+  .nav-item {
+    flex-grow: 1;
+    justify-content: center;
+  }
 }
 
 .title {

@@ -69,8 +69,16 @@
 			"image": "tyrion.jpg"
 		},
 		{
-			"name": "Drogon",
+			"name": "Drogon (Black)",
 			"image": "drogon.jpg"
+		},
+			{
+			"name": "Rhaegal (Green)",
+			"image": "rhaegal.jpg"
+		},
+			{
+			"name": "Viserion (Red)",
+			"image": "viserion.jpg"
 		},
 
 		{
