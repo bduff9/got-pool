@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Bert } from 'meteor/themeteorchef:bert';
-import { Button, Column, Columns } from 'bloomer';
+import { Box, Button, Column, Columns, Content, Control, Field, FieldBody, FieldLabel, Label, Title } from 'bloomer';
 
 import { displayError } from '../globals';
 import { addPick, deletePick, updatePick } from '../collections/picks';
@@ -22,6 +22,7 @@ export default class MakePicks extends TrackerReact(Component) {
 	constructor (props) {
 		super();
 		this.state = {
+			filterCharacterStr: '',
 			currentModal: null,
 			subscriptions: {
 				characters: Meteor.subscribe('allCharacters'),
@@ -32,6 +33,7 @@ export default class MakePicks extends TrackerReact(Component) {
 		this._pickCharacter = this._pickCharacter.bind(this);
 		this._setPoints = this._setPoints.bind(this);
 		this._submitPicks = this._submitPicks.bind(this);
+		this._filterCharacter = this._filterCharacter.bind(this);
 	}
 
 	componentWillUnmount () {
@@ -50,6 +52,10 @@ export default class MakePicks extends TrackerReact(Component) {
 
 	_closeModal (ev) {
 		this.setState({ currentModal: null });
+	}
+
+	_filterCharacter (ev) {
+		this.setState({ filterCharacterStr: ev.currentTarget.value });
 	}
 
 	_pickCharacter (character, ev) {
@@ -77,8 +83,16 @@ export default class MakePicks extends TrackerReact(Component) {
 
 	_submitPicks (ev) {
 		const tiebreakerStr = this.tiebreakerInput.value,
-				tiebreaker = parseInt(tiebreakerStr, 10);
-		//TODO: validate tiebreaker
+				tiebreaker = parseInt(tiebreakerStr, 10),
+				totalPicked = this.picks().length;
+		if (totalPicked < 7) {
+			Bert.alert({
+				message: 'You have not selected all 7 picks',
+				type: 'danger',
+				icon: 'fa-exclamation-triangle'
+			});
+			return false;
+		}
 		submitPicks.call({ tiebreaker }, err => {
 			if (err) {
 				displayError(err, { title: err.reason, type: 'warning' });
@@ -95,17 +109,57 @@ export default class MakePicks extends TrackerReact(Component) {
 	}
 
 	render () {
-		const { currentModal, subscriptions } = this.state,
+		const { currentModal, filterCharacterStr, subscriptions } = this.state,
 				{ characters, picks } = subscriptions,
 				pageReady = characters.ready() && picks.ready();
 		return (
 			<Loading isLoading={!pageReady}>
 				<Helmet title="Make Picks" />
-				Tiebreaker:
-				<input className="input" type="number" ref={input => { this.tiebreakerInput = input; }} />
-				<Button isColor="primary" type="button" onClick={this._submitPicks}>Submit</Button>
+				<Box isFullWidth>
+					<Content isSize={{ desktop: 'medium' }} hasTextAlign="centered" isPaddingless>
+						<Title isSize={4} hasTextColor="danger"><strong>Picks locked when episode 2 begins!</strong></Title>
+					</Content>
+				</Box>
+				<Field isHorizontal isGrouped>
+					<FieldLabel isNormal>
+						<Label>Search </Label>
+					</FieldLabel>
+					<FieldBody>
+						<Field>
+							<Control isExpanded>
+								<input
+									className="input"
+									type="text"
+									placeholder="Enter Character Name"
+									onChange={this._filterCharacter}
+									value={filterCharacterStr}
+								/>
+							</Control>
+						</Field>
+					</FieldBody>
+					<FieldLabel isNormal>
+						<Label>Tiebreaker </Label>
+					</FieldLabel>
+					<FieldBody>
+						<Field>
+							<Control isExpanded>
+								<input
+									className="input"
+									type="number"
+									placeholder="Total Characters To Die"
+									ref={input => { this.tiebreakerInput = input; }}
+								/>
+							</Control>
+						</Field>
+						<Field >
+							<Control>
+								<Button isFullWidth isColor="primary" type="button" onClick={this._submitPicks}>Submit Picks</Button>
+							</Control>
+						</Field>
+					</FieldBody>
+				</Field>
 				<Columns isCentered isMultiline>
-					{this.characters().map(character => (
+					{this.characters().filter(character => !filterCharacterStr || character.name.toUpperCase().indexOf(filterCharacterStr.toUpperCase()) > -1).map(character => (
 						<Column isSize={{ default: '1/4', tablet: '1/2', mobile: 'full' }} key={`character${character._id}`}>
 							<CharacterCard character={character} picks={this.picks()} pickCharacter={this._pickCharacter.bind(null, character)} />
 						</Column>

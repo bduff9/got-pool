@@ -49,7 +49,7 @@ export default class Home extends TrackerReact(Component) {
 		return (
 			<Loading isLoading={!pageReady}>
 				<Helmet title="Dashboard" />
-				{!currentUser.has_submitted ? (
+				{currentUser.has_submitted ? (
 					<Table isBordered isStriped>
 						<thead>
 							<tr>
