@@ -82,10 +82,10 @@ export default class AppNavigation extends TrackerReact(Component) {
 					<HeroFooter isHidden="desktop">
 						<Nav>
 							<NavLeft hasTextAlign="centered" >
-								<NavLink className="nav-item" to="/" exact><Icon icon='home' /></NavLink>
-								<NavItem href="javascript:void(0);" onClick={this._toggleRules}><Icon icon='question-circle-o' /></NavItem>
+								<NavLink className="nav-item" to="/" exact><Icon isSize="medium" icon='home' /></NavLink>
+								<NavItem href="javascript:void(0);" onClick={this._toggleRules}><Icon isSize="medium" icon='question-circle-o' /></NavItem>
 								<NavLink className="nav-item" to="/picks/make" exact><Icon icon='users' /></NavLink>
-								<NavLink className="nav-item" to="/logout" exact><Icon icon='sign-out' /></NavLink>
+								<NavLink className="nav-item" to="/logout" exact><Icon isSize="medium" icon='sign-out' /></NavLink>
 							</NavLeft>
 						</Nav>
 					</HeroFooter>
