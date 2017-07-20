@@ -51,7 +51,7 @@ export default class AppNavigation extends TrackerReact(Component) {
 								<Title isSize={5}>&nbsp; Death Pool</Title>
 							</NavItem>
 						</NavLeft>
-						<NavCenter isHidden="desktop">
+						<NavCenter isHidden="tablet">
 							<NavItem>
 								<Title isSize={3} isPaddingless># </Title>
 							</NavItem>
@@ -79,7 +79,7 @@ export default class AppNavigation extends TrackerReact(Component) {
 					</HeroBody>
 				)
 					:
-					<HeroFooter isHidden="desktop">
+					<HeroFooter isHidden="tablet">
 						<Nav>
 							<NavLeft hasTextAlign="centered" >
 								<NavLink className="nav-item" to="/" exact><Icon isSize="medium" icon='home' /></NavLink>
