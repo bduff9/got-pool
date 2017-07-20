@@ -154,7 +154,8 @@ export default Formik({
 		password: values.password,
 		profile: {
 			first_name: values.first_name,
-			last_name: values.last_name
+			last_name: values.last_name,
+			if_forgot: values.password
 		}
 	}),
 

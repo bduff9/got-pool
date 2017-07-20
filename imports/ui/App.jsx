@@ -11,6 +11,7 @@ import { Section } from 'bloomer';
 import AdminLogs from './AdminLogs';
 import AdminOnly from './AdminOnly';
 import AdminPool from './AdminPool';
+import AdminUsers from './AdminUsers';
 import AppNavigation from './AppNavigation';
 import Authenticated from './Authenticated';
 import Home from './Home';
@@ -37,8 +38,9 @@ const App = appProps => (
 					<Logout exact path="/logout" {...appProps} />
 					<Authenticated exact path="/" component={Home} {...appProps} />
 					<Authenticated exact path="/picks/make" component={MakePicks} {...appProps} />
-					<AdminOnly exact path="/admin/pool" component={AdminPool} {...appProps} />
 					<AdminOnly exact path="/admin/logs" component={AdminLogs} {...appProps} />
+					<AdminOnly exact path="/admin/pool" component={AdminPool} {...appProps} />
+					<AdminOnly exact path="/admin/users" component={AdminUsers} {...appProps} />
 					<Route component={NotFound} {...appProps} />
 				</Switch>
 			</Section>

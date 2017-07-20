@@ -45,7 +45,7 @@ export default class MakePicks extends TrackerReact(Component) {
 	}
 
 	picks () {
-		return Pick.find({}, { sort: { points: 1 }}).fetch();
+		return Pick.find({ user_id: Meteor.userId() }, { sort: { points: 1 }}).fetch();
 	}
 
 	_closeModal (ev) {

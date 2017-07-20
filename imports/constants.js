@@ -17,3 +17,8 @@ export const ACTIONS = [
  * The number of logs to display on load
  */
 export const LOGS_PER_PAGE = 20;
+
+/**
+ * The cost to participate
+ */
+export const POOL_COST = 10;

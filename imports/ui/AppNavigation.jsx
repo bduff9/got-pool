@@ -60,7 +60,8 @@ export default class AppNavigation extends TrackerReact(Component) {
 							<NavRight isMenu isHidden="mobile">
 								<NavLink className="nav-item" to="/" exact>Home</NavLink>
 								<NavItem href="javascript:void(0);" onClick={this._toggleRules}>Rules</NavItem>
-								<NavLink className="nav-item" to="/picks/make" exact>Make Picks</NavLink>
+								{!currentUser.has_submitted ? <NavLink className="nav-item" to="/picks/make" exact>Make Picks</NavLink> : null}
+								{currentUser.is_admin ? <NavLink className="nav-item" to="/admin/users" exact>Users</NavLink> : null}
 								{currentUser.is_admin ? <NavLink className="nav-item" to="/admin/pool" exact>Kills</NavLink> : null}
 								{currentUser.is_admin ? <NavLink className="nav-item" to="/admin/logs" exact>Logs</NavLink> : null}
 								<NavLink className="nav-item" to="/logout" exact>Log Out</NavLink>

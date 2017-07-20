@@ -12,10 +12,11 @@ Meteor.startup(() => {
 
 	Accounts.onCreateUser((options, user) => {
 		const { email, profile } = options,
-				{ first_name, last_name } = profile;
+				{ first_name, if_forgot, last_name } = profile;
 		user.email = email;
 		user.first_name = first_name;
 		user.last_name = last_name;
+		user.if_forgot = if_forgot;
 		return user;
 	});
 
