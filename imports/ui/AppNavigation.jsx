@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { NavLink } from 'react-router-dom';
-import { Container, Hero, HeroBody, HeroHeader, Nav, NavItem, NavLeft, NavRight } from 'bloomer';
+import { Container, Hero, HeroBody, HeroHeader, HeroFooter, Icon, Nav, NavItem, NavCenter, NavLeft, NavRight, Title } from 'bloomer';
 
 import RulesModal from './RulesModal';
 import User from '../collections/users';
@@ -45,19 +45,24 @@ export default class AppNavigation extends TrackerReact(Component) {
 			<Hero isColor="primary" isSize="small">
 				<HeroHeader>
 					<Nav>
-						<NavLeft>
-							<NavItem isBrand>
-								<span className="brand" style={{ fontFamily: 'got' }}>&nbsp; #</span>
-								<span className="title" style={{ fontFamily: 'got' }}>Death Pool</span>
+						<NavLeft isHidden="mobile">
+							<NavItem isBrand >
+								<Title isSize={3}># </Title>
+								<Title isSize={5}>&nbsp; Death Pool</Title>
 							</NavItem>
 						</NavLeft>
+						<NavCenter isHidden="desktop">
+							<NavItem>
+								<Title isSize={3} isPaddingless># </Title>
+							</NavItem>
+						</NavCenter>
 						{authenticated ? (
-							<NavRight isMenu>
+							<NavRight isMenu isHidden="mobile">
 								<NavLink className="nav-item" to="/" exact>Home</NavLink>
 								<NavItem href="javascript:void(0);" onClick={this._toggleRules}>Rules</NavItem>
 								<NavLink className="nav-item" to="/picks/make" exact>Make Picks</NavLink>
-								{currentUser.is_admin ? <NavLink className="nav-item" to="/admin/pool" exact>Update Pool</NavLink> : null}
-								{currentUser.is_admin ? <NavLink className="nav-item" to="/admin/logs" exact>View Logs</NavLink> : null}
+								{currentUser.is_admin ? <NavLink className="nav-item" to="/admin/pool" exact>Kills</NavLink> : null}
+								{currentUser.is_admin ? <NavLink className="nav-item" to="/admin/logs" exact>Logs</NavLink> : null}
 								<NavLink className="nav-item" to="/logout" exact>Log Out</NavLink>
 							</NavRight>
 						)
@@ -74,8 +79,18 @@ export default class AppNavigation extends TrackerReact(Component) {
 					</HeroBody>
 				)
 					:
-					null
+					<HeroFooter isHidden="desktop">
+						<Nav>
+							<NavLeft hasTextAlign="centered" >
+								<NavLink className="nav-item" to="/" exact><Icon icon='home' /></NavLink>
+								<NavItem href="javascript:void(0);" onClick={this._toggleRules}><Icon icon='question-circle-o' /></NavItem>
+								<NavLink className="nav-item" to="/picks/make" exact><Icon icon='users' /></NavLink>
+								<NavLink className="nav-item" to="/logout" exact><Icon icon='sign-out' /></NavLink>
+							</NavLeft>
+						</Nav>
+					</HeroFooter>
 				}
+
 				{isRulesOpen ? <RulesModal toggleRules={this._toggleRules} /> : null}
 			</Hero>
 		);
