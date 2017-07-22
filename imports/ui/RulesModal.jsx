@@ -14,7 +14,6 @@ const RulesModal = ({ toggleRules }) => (
 			</ModalCardHeader>
 			<ModalCardBody>
 				{<div className="rules" >
-					<h4><strong>Note: Picks will be locked at the beginning of episode 2.</strong></h4>
 					<ol>
 						<li>$10 entry fee for the entire season.</li>
 						<li>Pick 7 characters you think will perish in season 7.</li> 
@@ -27,7 +26,9 @@ const RulesModal = ({ toggleRules }) => (
 						<li>A character is considered dead if they are still dead by the curtain closing of season 7.</li>
 						<li>A character turning into a member of the army of the dead is still considered dead.</li>
 						<li>The players ranked 1st and 2nd at the end of the season will take the 1st and 2nd place winnings.</li>
-						<li>In the event of a tie, the play who picks closest to the total number of available characters (without going over) to die will win.</li>
+						<li>Before you can submit your picks, you must submit a tiebreaker.</li>
+						<li>Your guess should be as close to the total number of listed characters to die without going over.</li>
+						<li>If the two closest guesses are over, the closest to the actual number will win.</li>
 						<li>In the event of a tie for end of season points AND a tie for the tiebreaker, the players involved will split the pot.</li>
 						
 					</ol>
