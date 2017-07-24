@@ -16,6 +16,4 @@ SSL:
 	https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
 	https://medium.com/@grahamleslie/setting-up-meteor-meteor-up-letsencrypt-ssl-and-nginx-dddb3b5a4baa
 
-~Mobile Styling
-~Rules and tiebreakers
-~Styling details (i.e. red x on dead characters)
+~SSL: Restart nginx, pull latest changes, update Mup config, deploy

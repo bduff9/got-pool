@@ -7,7 +7,10 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Link } from 'react-router-dom';
 import { Table, Title } from 'bloomer';
 
+import { getSortUsersByPoints } from '../globals';
 import Loading from './Loading';
+import Character from '../collections/characters';
+import Pick from '../collections/picks';
 import User from '../collections/users';
 
 export default class Home extends TrackerReact(Component) {
@@ -30,11 +33,11 @@ export default class Home extends TrackerReact(Component) {
 	}
 
 	characters () {
-		return User.find({}).fetch();
+		return Character.find({}).fetch();
 	}
 
 	picks () {
-		return User.find({}).fetch();
+		return Pick.find({}).fetch();
 	}
 
 	users () {
@@ -45,7 +48,10 @@ export default class Home extends TrackerReact(Component) {
 		const { subscriptions } = this.state,
 				{ characters, picks, users } = subscriptions,
 				currentUser = Meteor.user(),
-				pageReady = characters.ready() && picks.ready() && users.ready();
+				pageReady = characters.ready() && picks.ready() && users.ready(),
+				charactersDead = this.characters().filter(character => !character.isAlive),
+				sortUsersByPoints = getSortUsersByPoints(charactersDead.length),
+				sortedUsers = this.users().map(user => Object.assign({ picks: user.getPicks(), points: user.getPoints() }, user)).sort(sortUsersByPoints);
 		return (
 			<Loading isLoading={!pageReady}>
 				<Helmet title="Dashboard" />
@@ -56,20 +62,24 @@ export default class Home extends TrackerReact(Component) {
 								<th>Player</th>
 								<th>Picks</th>
 								<th>Score</th>
+								<th className="is-hidden-mobile">Tiebreaker</th>
+								<th className="is-hidden-mobile">Characters Died</th>
 							</tr>
 						</thead>
 						<tbody>
-							{this.users().map(user => {
+							{sortedUsers.map(user => {
 								return (
 									<tr key={`user${user._id}`}>
 										<td>{`${user.first_name} ${user.last_name}`}</td>
 										<td>
-											{user.getPicks().map(pick => {
+											{user.picks.map(pick => {
 												const character = pick.getCharacter();
 												return <div className={character.isAlive ? null : 'dead'} key={`pick${pick._id}`}>{pick.points} {character.name}</div>;
 											})}
 										</td>
-										<td>{user.getPoints()}</td>
+										<td>{user.points}</td>
+										<td className="is-hidden-mobile">{user.tiebreaker}</td>
+										<td className="is-hidden-mobile">{charactersDead.length}</td>
 									</tr>
 								);
 							})}
@@ -83,5 +93,3 @@ export default class Home extends TrackerReact(Component) {
 		);
 	}
 }
-
-Home.propTypes = {};

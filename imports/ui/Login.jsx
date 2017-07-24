@@ -10,17 +10,18 @@ import RegistrationForm from './RegistrationForm';
 
 export default class Login extends Component {
 	constructor (props) {
-		const { location } = props;
+		// 2017-07-24: Commented out isLogin refs since registration is over
+		//const { location } = props;
 		super();
 		this.state = {
-			isLogin: location.pathname === '/login'
+			isLogin: true//location.pathname === '/login'
 		};
 		this._toggleLogin = this._toggleLogin.bind(this);
 	}
 
 	_toggleLogin (ev) {
-		const { isLogin } = this.state;
-		this.setState({ isLogin: !isLogin });
+		//const { isLogin } = this.state;
+		//this.setState({ isLogin: !isLogin });
 	}
 
 	render () {

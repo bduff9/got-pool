@@ -68,9 +68,10 @@ const SimpleForm = ({
 				<Control>
 					<Button type="submit" isLoading={isSubmitting} isColor="primary">Login</Button>
 				</Control>
+				{/* 2017-07-24: Commented out since registration has ended
 				<Control>
 					<Button type="button" isColor="info" onClick={goRegister}>Register</Button>
-				</Control>
+				</Control>*/}
 			</Field>
 			{error && error.message && <Help isColor="danger">{error.message}</Help>}
 		</Field>
