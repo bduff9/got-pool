@@ -48,10 +48,16 @@ export default class Home extends TrackerReact(Component) {
 		const { subscriptions } = this.state,
 				{ characters, picks, users } = subscriptions,
 				currentUser = Meteor.user(),
-				pageReady = characters.ready() && picks.ready() && users.ready(),
+				charactersReady = characters.ready() || this.characters().length,
+				picksReady = picks.ready() || this.picks().length,
+				usersReady = users.ready() || this.users().length > 1,
+				pageReady = charactersReady && picksReady && usersReady,
 				charactersDead = this.characters().filter(character => !character.isAlive),
 				sortUsersByPoints = getSortUsersByPoints(charactersDead.length),
 				sortedUsers = this.users().map(user => Object.assign({ picks: user.getPicks(), points: user.getPoints() }, user)).sort(sortUsersByPoints);
+		console.log('characters', characters.ready(), this.characters());
+		console.log('picks', picks.ready(), this.picks());
+		console.log('users', users.ready(), this.users());
 		return (
 			<Loading isLoading={!pageReady}>
 				<Helmet title="Dashboard" />

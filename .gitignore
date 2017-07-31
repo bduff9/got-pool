@@ -40,4 +40,4 @@ settings.json
 prod-settings.json
 mup.*
 *.orig
-backup
+mongobackup
