@@ -18,18 +18,16 @@ export default class Home extends TrackerReact(Component) {
 		super();
 		this.state = {
 			subscriptions: {
-				characters: Meteor.subscribe('allCharacters'),
-				picks: Meteor.subscribe('allPicks'),
-				users: Meteor.subscribe('allUsers')
+
 			}
 		};
 	}
 
 	componentWillUnmount () {
-		const { characters, picks, users } = this.state.subscriptions;
-		characters.stop();
-		picks.stop();
-		users.stop();
+		//const { characters, picks, users } = this.state.subscriptions;
+		//characters.stop();
+		//picks.stop();
+		//users.stop();
 	}
 
 	characters () {
@@ -45,8 +43,11 @@ export default class Home extends TrackerReact(Component) {
 	}
 
 	render () {
-		const { subscriptions } = this.state,
-				{ characters, picks, users } = subscriptions,
+		const //{ subscriptions } = this.state,
+				//{ characters, picks, users } = subscriptions,
+				characters = Meteor.subscribe('allCharacters'),
+				picks = Meteor.subscribe('allPicks'),
+				users = Meteor.subscribe('allUsers'),
 				currentUser = Meteor.user(),
 				charactersReady = characters.ready() || this.characters().length,
 				picksReady = picks.ready() || this.picks().length,
