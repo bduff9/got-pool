@@ -16,18 +16,7 @@ import User from '../collections/users';
 export default class Home extends TrackerReact(Component) {
 	constructor (props) {
 		super();
-		this.state = {
-			subscriptions: {
-
-			}
-		};
-	}
-
-	componentWillUnmount () {
-		//const { characters, picks, users } = this.state.subscriptions;
-		//characters.stop();
-		//picks.stop();
-		//users.stop();
+		this.state = {};
 	}
 
 	characters () {
@@ -43,9 +32,7 @@ export default class Home extends TrackerReact(Component) {
 	}
 
 	render () {
-		const //{ subscriptions } = this.state,
-				//{ characters, picks, users } = subscriptions,
-				characters = Meteor.subscribe('allCharacters'),
+		const characters = Meteor.subscribe('allCharacters'),
 				picks = Meteor.subscribe('allPicks'),
 				users = Meteor.subscribe('allUsers'),
 				currentUser = Meteor.user(),
