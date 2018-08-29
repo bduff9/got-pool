@@ -30,7 +30,7 @@
     "react-infinite-scroller": "^1.0.14",
     "react-komposer": "^1.13.1",
     "react-router-dom": "^4.1.1",
-    "yup": "^0.21.3"
+    "yup": "^0.26.2"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.2",
