@@ -24,7 +24,7 @@
     "formik": "^0.7.2",
     "meteor-node-stubs": "~0.2.4",
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
+    "react": "^16.4.2",
     "react-dom": "^15.6.1",
     "react-helmet": "^5.1.3",
     "react-infinite-scroller": "^1.0.14",
