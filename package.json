@@ -21,7 +21,7 @@
     "bloomer": "0.6.3",
     "bulma_scss": "0.3.0",
     "bulmaswatch": "0.4.4",
-    "formik": "0.7.2",
+    "formik": "0.11.11",
     "meteor-node-stubs": "0.2.11",
     "prop-types": "15.6.2",
     "react": "15.6.2",
