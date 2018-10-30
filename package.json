@@ -18,7 +18,7 @@
   "dependencies": {
     "babel-runtime": "6.26.0",
     "bcrypt": "1.0.3",
-    "bloomer": "0.6.3",
+    "bloomer": "0.6.5",
     "bulma_scss": "0.3.0",
     "bulmaswatch": "0.4.4",
     "formik": "0.7.2",
