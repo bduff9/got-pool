@@ -1,0 +1,33 @@
+version: 2
+registries:
+  npm-registry-npm-fontawesome-com:
+    type: npm-registry
+    url: https://npm.fontawesome.com/
+    token: "${{secrets.NPM_REGISTRY_NPM_FONTAWESOME_COM_TOKEN}}"
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: meteor-node-stubs
+    versions:
+    - 1.0.1
+    - 1.0.2
+  - dependency-name: react
+    versions:
+    - 15.7.0
+    - 17.0.1
+  - dependency-name: yup
+    versions:
+    - 0.32.8
+  - dependency-name: bcrypt
+    versions:
+    - 5.0.0
+  - dependency-name: eslint-loader
+    versions:
+    - 3.0.4
+  registries:
+  - npm-registry-npm-fontawesome-com
