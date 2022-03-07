@@ -23,7 +23,7 @@
     "bulmaswatch": "0.4.4",
     "formik": "0.7.2",
     "meteor-node-stubs": "0.2.11",
-    "prop-types": "15.6.2",
+    "prop-types": "15.8.1",
     "react": "15.6.2",
     "react-dom": "15.6.2",
     "react-helmet": "5.2.0",
