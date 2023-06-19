@@ -39,7 +39,7 @@
     "eslint-loader": "2.1.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-react": "7.11.1",
-    "jshint": "2.9.6"
+    "jshint": "2.13.6"
   },
   "postcss": {
     "plugins": {
