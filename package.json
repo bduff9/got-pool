@@ -33,7 +33,7 @@
     "yup": "0.26.5"
   },
   "devDependencies": {
-    "autoprefixer": "9.1.5",
+    "autoprefixer": "10.4.19",
     "babel-eslint": "9.0.0",
     "eslint": "5.6.0",
     "eslint-loader": "2.1.0",
